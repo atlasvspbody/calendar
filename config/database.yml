@@ -80,6 +80,8 @@ test:
 #
 production:
   <<: *default
-  database: calendar_production
-  username: calendar
+  database: calendar
+  username: postgres_cal
   password: <%= ENV['CALENDAR_DATABASE_PASSWORD'] %>
+  host: <%= ENV['CALENDAR_DATABASE_HOST'] %>
+  port: <%= ENV['CALENDAR_DATABASE_PORT'] %>

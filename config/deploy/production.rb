@@ -59,3 +59,12 @@
 #     auth_methods: %w(publickey password)
 #     # password: "please use keys"
 #   }
+
+role :app, %w{deploy_user@18.216.31.81}
+role :web, %w{deploy_user@18.216.31.81}
+role :db,  %w{deploy_user@18.216.31.81}
+set :ssh_options, {
+    keys: %w(~/.ssh/demo.pem),
+    forward_agent: false,
+    auth_methods: %w(publickey password)
+}
